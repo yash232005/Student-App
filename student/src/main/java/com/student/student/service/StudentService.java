@@ -4,7 +4,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.student.student.StudentRepository;
+// Ensure that StudentRepository exists at com.student.student.repository
+import com.student.student.Repository.StudentRepository;
 import com.student.student.model.StudentModel;
 
 @Service
@@ -26,7 +27,7 @@ public class StudentService {
     }
 
     public void deleteStudent(Long studentRoll){
-        studentRepository.deleteById(String.valueOf(studentRoll));
+        studentRepository.deleteById(studentRoll);
     }
 
     public List<StudentModel> updateStudentbulk(List<StudentModel> students){
@@ -39,7 +40,7 @@ public class StudentService {
 
     public void deleteStudentbulk(List<Long> studentRolls){
         for(Long studentRoll : studentRolls){
-            studentRepository.deleteById(String.valueOf(studentRoll));
+            studentRepository.deleteById(studentRoll);
         }
     }
 }
