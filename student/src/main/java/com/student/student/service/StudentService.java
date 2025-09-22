@@ -26,7 +26,7 @@ public class StudentService {
         return studentRepository.save(student);
     }
 
-    public void deleteStudent(Long studentRoll){
+    public void deleteStudent(String studentRoll){
         studentRepository.deleteById(studentRoll);
     }
 
@@ -38,8 +38,8 @@ public class StudentService {
         return studentRepository.saveAll(students);
     }
 
-    public void deleteStudentbulk(List<Long> studentRolls){
-        for(Long studentRoll : studentRolls){
+    public void deleteStudentbulk(List<String> studentRolls){
+        for(String studentRoll : studentRolls){
             studentRepository.deleteById(studentRoll);
         }
     }
