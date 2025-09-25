@@ -5,5 +5,5 @@ import com.student.student.model.StudentModel;
 
 
 public interface StudentRepository extends JpaRepository<StudentModel, String> {
-
+    
 }
