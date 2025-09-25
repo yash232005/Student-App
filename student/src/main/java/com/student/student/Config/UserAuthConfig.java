@@ -19,7 +19,7 @@ public class UserAuthConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests((requests) -> requests
                 .requestMatchers("/userauth/public").permitAll()
-                .requestMatchers("/todos/**").permitAll()
+                .requestMatchers("/student/**").permitAll()
                 .requestMatchers("/userauth/account").hasRole("USER")
                 .requestMatchers("/userauth/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
